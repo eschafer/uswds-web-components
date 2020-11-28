@@ -22,6 +22,12 @@ export namespace Components {
     }
     interface UsaButton {
     }
+    interface UsaLink {
+    }
+    interface UsaList {
+    }
+    interface UsaTypography {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -36,9 +42,30 @@ declare global {
         prototype: HTMLUsaButtonElement;
         new (): HTMLUsaButtonElement;
     };
+    interface HTMLUsaLinkElement extends Components.UsaLink, HTMLStencilElement {
+    }
+    var HTMLUsaLinkElement: {
+        prototype: HTMLUsaLinkElement;
+        new (): HTMLUsaLinkElement;
+    };
+    interface HTMLUsaListElement extends Components.UsaList, HTMLStencilElement {
+    }
+    var HTMLUsaListElement: {
+        prototype: HTMLUsaListElement;
+        new (): HTMLUsaListElement;
+    };
+    interface HTMLUsaTypographyElement extends Components.UsaTypography, HTMLStencilElement {
+    }
+    var HTMLUsaTypographyElement: {
+        prototype: HTMLUsaTypographyElement;
+        new (): HTMLUsaTypographyElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "usa-button": HTMLUsaButtonElement;
+        "usa-link": HTMLUsaLinkElement;
+        "usa-list": HTMLUsaListElement;
+        "usa-typography": HTMLUsaTypographyElement;
     }
 }
 declare namespace LocalJSX {
@@ -58,9 +85,18 @@ declare namespace LocalJSX {
     }
     interface UsaButton {
     }
+    interface UsaLink {
+    }
+    interface UsaList {
+    }
+    interface UsaTypography {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "usa-button": UsaButton;
+        "usa-link": UsaLink;
+        "usa-list": UsaList;
+        "usa-typography": UsaTypography;
     }
 }
 export { LocalJSX as JSX };
@@ -69,6 +105,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "usa-button": LocalJSX.UsaButton & JSXBase.HTMLAttributes<HTMLUsaButtonElement>;
+            "usa-link": LocalJSX.UsaLink & JSXBase.HTMLAttributes<HTMLUsaLinkElement>;
+            "usa-list": LocalJSX.UsaList & JSXBase.HTMLAttributes<HTMLUsaListElement>;
+            "usa-typography": LocalJSX.UsaTypography & JSXBase.HTMLAttributes<HTMLUsaTypographyElement>;
         }
     }
 }
