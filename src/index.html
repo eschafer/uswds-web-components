@@ -9,6 +9,28 @@
     <script nomodule src="/build/uswds-stencil.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <h1>USWDS Components</h1>
+
+    <h2>Button</h2>
+    <usa-button><button>Default</button></usa-button>
+    <usa-button><button class="usa-button--secondary">Secondary color</button></usa-button>
+    <usa-button><button class="usa-button--accent-cool">Accent cool color</button></usa-button>
+    <usa-button><button class="usa-button--accent-warm">Accent warm color</button></usa-button>
+    <usa-button><button class="usa-button--base">Base color</button></usa-button>
+    <usa-button><button class="usa-button--outline">Outline</button></usa-button>
+
+    <usa-button><button class="usa-button--outline usa-button--inverse">Outline inverse</button></usa-button>
+    
+    <usa-button><button class="usa-button--big">Big</button></usa-button>
+    <usa-button><button class="usa-button--unstyled">Unstyled</button></usa-button>
+  
+    <h2>Tooltip</h2>
+    <div>
+      <usa-button><button title="Default">Show default</button></usa-button>
+      <usa-button><button data-position="top" title="Top">Show on top</button></usa-button>
+      <usa-button><button data-position="right" title="Right">Show on right</button></usa-button>
+      <usa-button><button data-position="left" title="Left">Show on left</button></usa-button>
+      <usa-button><button data-position="bottom" title="Bottom">Show on bottom</button></usa-button>
+    </div>
   </body>
 </html>
