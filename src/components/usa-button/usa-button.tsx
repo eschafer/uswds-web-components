@@ -3,7 +3,7 @@ import { tooltip } from 'uswds/src/js/components';
 
 @Component({
   tag: 'usa-button',
-  styleUrl: 'usa-button.css',
+  styleUrl: 'usa-button.scss',
   shadow: false,
   assetsDirs: ['../fonts', '../img']
 })

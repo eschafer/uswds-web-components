@@ -26,6 +26,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@stencil/sass": "^1.4.0",
     "autoprefixer": "^9.8.6",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
