@@ -20,11 +20,10 @@
   @import 'packages/global';
 
   // Then import individual component packages...
-  @import 'packages/usa-button';
-  @import 'packages/usa-tooltip'; 
+  // (in src/components/[component]/[component].scss)
 
   // -------------------------------------
   // Import theme custom styles
 
-  @import "uswds-theme-custom-styles";
+  // @import "uswds-theme-custom-styles";
 }

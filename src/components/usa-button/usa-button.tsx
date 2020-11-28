@@ -31,7 +31,7 @@ export class UsaButton {
 
   render() {
     return (
-      <Host class="uswds">
+      <Host class="uswds-stencil">
         <slot></slot>
       </Host>
     );
