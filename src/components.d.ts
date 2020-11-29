@@ -26,6 +26,8 @@ export namespace Components {
     }
     interface UsaList {
     }
+    interface UsaSidenav {
+    }
     interface UsaTypography {
     }
 }
@@ -54,6 +56,12 @@ declare global {
         prototype: HTMLUsaListElement;
         new (): HTMLUsaListElement;
     };
+    interface HTMLUsaSidenavElement extends Components.UsaSidenav, HTMLStencilElement {
+    }
+    var HTMLUsaSidenavElement: {
+        prototype: HTMLUsaSidenavElement;
+        new (): HTMLUsaSidenavElement;
+    };
     interface HTMLUsaTypographyElement extends Components.UsaTypography, HTMLStencilElement {
     }
     var HTMLUsaTypographyElement: {
@@ -65,6 +73,7 @@ declare global {
         "usa-button": HTMLUsaButtonElement;
         "usa-link": HTMLUsaLinkElement;
         "usa-list": HTMLUsaListElement;
+        "usa-sidenav": HTMLUsaSidenavElement;
         "usa-typography": HTMLUsaTypographyElement;
     }
 }
@@ -89,6 +98,8 @@ declare namespace LocalJSX {
     }
     interface UsaList {
     }
+    interface UsaSidenav {
+    }
     interface UsaTypography {
     }
     interface IntrinsicElements {
@@ -96,6 +107,7 @@ declare namespace LocalJSX {
         "usa-button": UsaButton;
         "usa-link": UsaLink;
         "usa-list": UsaList;
+        "usa-sidenav": UsaSidenav;
         "usa-typography": UsaTypography;
     }
 }
@@ -107,6 +119,7 @@ declare module "@stencil/core" {
             "usa-button": LocalJSX.UsaButton & JSXBase.HTMLAttributes<HTMLUsaButtonElement>;
             "usa-link": LocalJSX.UsaLink & JSXBase.HTMLAttributes<HTMLUsaLinkElement>;
             "usa-list": LocalJSX.UsaList & JSXBase.HTMLAttributes<HTMLUsaListElement>;
+            "usa-sidenav": LocalJSX.UsaSidenav & JSXBase.HTMLAttributes<HTMLUsaSidenavElement>;
             "usa-typography": LocalJSX.UsaTypography & JSXBase.HTMLAttributes<HTMLUsaTypographyElement>;
         }
     }

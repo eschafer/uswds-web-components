@@ -19,3 +19,18 @@ i.e.
 @include u-padding-right('05');
 ----------------------------------------
 */
+
+/*
+Not wrapping these styles in .uswds-stencil, since they're being imported
+in components that are already being wrapped.
+*/
+
+/* _nav-list.scss uses `& & & a` and `& & & & a` selectors, which don't work
+with nested includes. This is just duplicating that code with explicit selectors.
+Otherwise, sidenav grandchildren don't get indented. */
+.usa-sidenav__sublist .usa-sidenav__sublist a {
+   padding-left: units($sidenav-level-3-inset);
+}
+.usa-sidenav__sublist .usa-sidenav__sublist .usa-sidenav__sublist a {
+   padding-left: units($sidenav-level-4-inset);
+}
