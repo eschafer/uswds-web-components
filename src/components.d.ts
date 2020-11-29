@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface UsaAccordion {
+    }
     interface UsaButton {
     }
     interface UsaLink {
@@ -37,6 +39,12 @@ declare global {
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
+    };
+    interface HTMLUsaAccordionElement extends Components.UsaAccordion, HTMLStencilElement {
+    }
+    var HTMLUsaAccordionElement: {
+        prototype: HTMLUsaAccordionElement;
+        new (): HTMLUsaAccordionElement;
     };
     interface HTMLUsaButtonElement extends Components.UsaButton, HTMLStencilElement {
     }
@@ -70,6 +78,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "usa-accordion": HTMLUsaAccordionElement;
         "usa-button": HTMLUsaButtonElement;
         "usa-link": HTMLUsaLinkElement;
         "usa-list": HTMLUsaListElement;
@@ -92,6 +101,8 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface UsaAccordion {
+    }
     interface UsaButton {
     }
     interface UsaLink {
@@ -104,6 +115,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "usa-accordion": UsaAccordion;
         "usa-button": UsaButton;
         "usa-link": UsaLink;
         "usa-list": UsaList;
@@ -116,6 +128,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "usa-accordion": LocalJSX.UsaAccordion & JSXBase.HTMLAttributes<HTMLUsaAccordionElement>;
             "usa-button": LocalJSX.UsaButton & JSXBase.HTMLAttributes<HTMLUsaButtonElement>;
             "usa-link": LocalJSX.UsaLink & JSXBase.HTMLAttributes<HTMLUsaLinkElement>;
             "usa-list": LocalJSX.UsaList & JSXBase.HTMLAttributes<HTMLUsaListElement>;
