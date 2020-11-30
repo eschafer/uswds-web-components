@@ -2,16 +2,10 @@ import { html } from 'lit-html';
 import prettier from 'prettier';
 import parserHtml from "prettier/parser-html";
 
-const Component = ({ big = false, style = '' }) => {
-    let classes = style.split(', ').map((style) => {
-      if (style === '') {
-        return '';
-      }
-      return `usa-button--${style}`;
-    }).join(' ');
-  if (big) classes += ' usa-button--big';
-
-  const template = html`<usa-button><button class="usa-button ${classes}">Button</button></usa-button>`;
+const Component = ({ variant = '' }) => {
+  const template = html`<usa-button variant="${variant}">
+    <button>Button</button>
+</usa-button>`;
   return template;
 }
 
@@ -37,21 +31,20 @@ export default {
 
 const Template = (args) => Component(args);
 
-const defaultArgs = {
-  big: false,
-  style: ''
-};
-export const Default = Template.bind(defaultArgs);
-Default.parameters = {
+const demoArgs = {};
+export const Demo = Template.bind(demoArgs);
+Demo.parameters = {
   docs: {
     source: {
-      code: getComponentString(defaultArgs),
+      code: `// Note: code doesn't seem to update when controls change
+${getComponentString(demoArgs)}
+`,
     },
   },
 };
-Default.args = defaultArgs;
-Default.argTypes = {
-  style: {
+Demo.args = demoArgs;
+Demo.argTypes = {
+  variant: {
     control: {
       type: 'select',
       options: [
@@ -61,19 +54,70 @@ Default.argTypes = {
         'accent-warm',
         'base',
         'outline',
-        'outline, inverse',
-        'outline, inverse, unstyled',
+        'inverse',
         'unstyled'
       ]
     }
   }
 }
 
-export const Secondary = () => html`<usa-button><button class="usa-button--secondary">Secondary button</button></usa-button>`;
-export const AccentCool = () => html`<usa-button><button class="usa-button--accent-cool">Accent cool button</button></usa-button>`;
-export const AccentWarm = () => html`<usa-button><button class="usa-button--accent-warm">Accent warm button</button></usa-button>`;
-export const Base = () => html`<usa-button><button class="usa-button--base">Base button</button></usa-button>`;
-export const Outline = () => html`<usa-button><button class="usa-button--outline">Outline button</button></usa-button>`;
-export const OutlineInverse = () => html`<usa-button><button class="usa-button--outline usa-button--inverse">Outline inverse button</button></usa-button>`;
-export const Big = () => html`<usa-button><button class="usa-button--big">Big button</button></usa-button>`;
-export const Unstyled = () => html`<usa-button><button class="usa-button--unstyled">Unstyled button</button></usa-button>`;
+export const Variants = () => html`
+<div>
+  <usa-button>
+    <button>Default button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="secondary">
+    <button>Secondary button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="accent-cool">
+    <button>Accent cool button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="accent-warm">
+    <button>Accent warm button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="base">
+    <button>Base button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="outline">
+    <button>Outline button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="inverse">
+    <button>Inverse button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="big">
+    <button>Big button</button>
+  </usa-button>
+</div>
+<div>
+  <usa-button variant="unstyled">
+    <button>Unstyled button</button>
+  </usa-button>
+</div>
+`;
+
+export const OtherExamples = () => html`
+  <div>
+    <usa-button>
+      <button disabled>Disabled button</button>
+    </usa-button>
+  </div>
+  <div>
+    <usa-button>
+      <button title="Hello!">Tooltip button</button>
+    </usa-button>
+  </div>
+`
