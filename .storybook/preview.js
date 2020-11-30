@@ -5,7 +5,7 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: {
       transformSource (source, storyId) {
-        const matches = source.match(/^\(\) => html`(.+)`/);
+        const matches = source.match(/^\(\) => html`(.+)`/s);
 
         if (matches) {
           const htmlString = matches[1];
