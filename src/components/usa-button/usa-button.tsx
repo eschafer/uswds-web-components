@@ -29,25 +29,16 @@ export class UsaButton {
   }
 
   update() {
-    const variantClasses: {
-      secondary: string[];
-      "accent-cool": string[];
-      "accent-warm": string[];
-      base: string[];
-      outline: string[];
-      inverse: string[];
-      big: string[];
-      unstyled: string[];
-    } = {
-      secondary: ['usa-button--secondary'],
-      "accent-cool": ['usa-button--accent-cool'],
-      "accent-warm": ['usa-button--accent-warm'],
-      base: ['usa-button--base'],
-      outline: ['usa-button--outline'],
-      inverse: ['usa-button--outline', 'usa-button--inverse'],
-      big: ['usa-button--big'],
-      unstyled: ['usa-button--unstyled'],
-    };
+    const variants: { id: string, classes: string[] }[] = [
+      { id: 'secondary', classes: ['usa-button--secondary']},
+      { id: 'accent-cool', classes: ['usa-button--accent-cool']},
+      { id: 'accent-warm', classes: ['usa-button--accent-warm']},
+      { id: 'base', classes: ['usa-button--base']},
+      { id: 'outline', classes: ['usa-button--outline']},
+      { id: 'inverse', classes: ['usa-button--outline', 'usa-button--inverse']},
+      { id: 'big', classes: ['usa-button--big']},
+      { id: 'unstyled', classes: ['usa-button--unstyled']},
+    ];
 
     const button = this.el.querySelector('button');
 
@@ -59,15 +50,19 @@ export class UsaButton {
     // Not sure if that's a good idea or not...
     if (this.variant) {
       // clear variant styles
-      let allVariantClasses = [];
-      Object.keys(variantClasses).forEach(key => {
-        variantClasses[key].forEach((className) => {
+      const allVariantClasses = [];
+      variants.forEach(({ classes }) => {
+        classes.forEach((className) => {
           allVariantClasses.push(className);
-        });
+        })
       });
       button.classList.remove(...allVariantClasses);
-
-      button.classList.add(...variantClasses[this.variant]);
+      
+      const filteredVariants = variants.filter((variant) => variant.id === this.variant);
+      if (filteredVariants.length > 0) {
+        const { classes } = filteredVariants[0];
+        button.classList.add(...classes);
+      }
     }
 
     // add .usa-tooltip if there's a title attr

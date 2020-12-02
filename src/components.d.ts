@@ -21,8 +21,10 @@ export namespace Components {
         "middle": string;
     }
     interface UsaAccordion {
+        "variant": string;
     }
     interface UsaButton {
+        "variant": string;
     }
     interface UsaLink {
     }
@@ -102,8 +104,10 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface UsaAccordion {
+        "variant"?: string;
     }
     interface UsaButton {
+        "variant"?: string;
     }
     interface UsaLink {
     }
