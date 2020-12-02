@@ -1,5 +1,6 @@
 import prettier from 'prettier';
 import parserHtml from "prettier/parser-html";
+import "./preview.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
